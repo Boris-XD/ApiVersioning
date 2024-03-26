@@ -5,7 +5,7 @@ using Versioning.Api.Dto;
 namespace Versioning.Api.Controllers.v1
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/User")]
     [ApiVersion("1.0")]
     public class UserController : ControllerBase
     {

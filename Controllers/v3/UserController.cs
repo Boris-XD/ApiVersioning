@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Versioning.Api.Dto;
 
-namespace Versioning.Api.Controllers.v2
+namespace Versioning.Api.Controllers.v3
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/User")]
-    [ApiVersion("2.0")]
+    [ApiVersion("3.0")]
     public class UserController : ControllerBase
     {
         [HttpGet]
@@ -17,7 +17,7 @@ namespace Versioning.Api.Controllers.v2
                 Id = Guid.NewGuid(),
                 LastName = "Doe",
                 FirstName = "John",
-                Version = "2.0"
+                Version = "3.0"
             });
         }
     }

@@ -13,16 +13,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "API v2", Version = "v2" });
 });
 
-var apiVersioningBuilder = builder.Services.AddApiVersioning(o =>
-{
-    o.AssumeDefaultVersionWhenUnspecified = true;
-    o.DefaultApiVersion = new ApiVersion(1, 0);
-    o.ReportApiVersions = true;
-    o.ApiVersionReader = ApiVersionReader.Combine(
-        new QueryStringApiVersionReader("api-version"),
-        new HeaderApiVersionReader("X-Version"),
-        new MediaTypeApiVersionReader("ver"));
-});
+var apiVersioningBuilder = builder.Services.AddApiVersioning();
 
 
 apiVersioningBuilder.AddApiExplorer(
